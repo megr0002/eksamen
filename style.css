@@ -1,0 +1,157 @@
+html {
+  background-color: var(--secondary);
+}
+html {
+  /** farver **/
+  --primary: #012623;
+  --secondary: #f2c1b6;
+  --tertiary: #a64e5e;
+  --quarternary: #ffff;
+
+  /** spacing **/
+  --space-xxs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 6rem;
+  --space-xxxl: 10;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+/** fonte **/
+h1 {
+  font-family: "bad script", sans-serif;
+  color: var(--secondary);
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-md);
+}
+h2 {
+  font-family: "libre baskerville", serif;
+  color: var(--secondary);
+}
+h3 {
+  font-family: "inria sans", sans;
+  font-weight: normal;
+  color: #000000;
+  /* padding-bottom: var(--space-sm); */
+}
+p {
+  font-family: "Inter", sans;
+  color: rgb(0, 0, 0);
+  font-weight: normal;
+  line-height: 1.6;
+  padding-bottom: var(--space-sm);
+  max-width: 42ch; /* Begrænser bredden til max 42 tegn på hver linje */
+}
+
+/* General styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.menu-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+.menu ul li {
+  flex: 1;
+  text-align: center;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
+  transition: color 0.3s;
+}
+
+.menu ul li a:hover {
+  color: #007bff;
+}
+
+/* Burger menu styles */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.burger-menu span {
+  height: 4px;
+  width: 100%;
+  background: white;
+  border-radius: 5px;
+}
+
+/* Responsive styles */
+@media (max-width: 800px) {
+  .menu ul {
+    display: none;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+  .menu ul.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .menu ul li {
+    text-align: right;
+    margin: 5px 0;
+  }
+}
