@@ -168,6 +168,16 @@ body {
 .pink_background {
   background-color: var(--secondary);
 }
+.grid_2-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5%;
+  padding: var(--space-md);
+}
+.project {
+  padding: var(--space-md);
+  text-align: left;
+}
 
 @media (max-width: 800px) {
   /* -----------Front page mobile------------ */
@@ -190,15 +200,23 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: var(--space-sm);
 }
+.order {
+  order: -1;
+}
 
 /* -----------Web desktop------------ */
+.grid_1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5%;
+}
 
 .footer_flex {
   display: flex;
   width: ;
   justify-content: space-between;
   img {
-    width: 20%;
+    width: 30%;
     gap: ;
     background-color: var(--primary);
   }
