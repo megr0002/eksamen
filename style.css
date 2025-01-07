@@ -25,7 +25,6 @@ html {
   box-sizing: border-box;
 }
 main {
-  max-width: 1400px;
   margin-inline: auto;
 }
 
@@ -36,9 +35,11 @@ img {
 /** fonte **/
 h1 {
   font-family: "bad script", sans-serif;
-  color: var(--secondary);
-  padding-top: var(--space-xl);
+  font-weight: 400;
+  line-height: 150%;
+  padding-top: var(--space-sm);
   padding-bottom: var(--space-md);
+  font-size: 3rem;
 }
 h2 {
   font-family: "libre baskerville", serif;
@@ -53,13 +54,33 @@ h3 {
 
 p {
   font-family: "Inter", sans;
-  color: rgb(0, 0, 0);
   font-weight: normal;
   line-height: 1.6;
   padding-bottom: var(--space-sm);
   max-width: 42ch; /* Begrænser bredden til max 42 tegn på hver linje */
 }
-/* General styles */
+a {
+  color: #fff;
+
+  font-family: "Inria Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.button {
+  font-family: "inria sans", sans;
+  color: var(--quarternary);
+  padding: 4%;
+
+  border-radius: 73px;
+  border: 4px solid #fff;
+  background: #a64e5e;
+  width: 230px;
+  height: 58px;
+}
+
+/* menu general styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -140,6 +161,7 @@ body {
 
   .burger-menu {
     display: flex;
+    text-align: center;
   }
 
   .menu ul.show {
@@ -148,10 +170,11 @@ body {
     position: absolute;
     top: 60px;
     right: 10px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 10px;
+    margin-top: 16%;
   }
 
   .menu ul li {
@@ -168,6 +191,41 @@ body {
 .pink_background {
   background-color: var(--secondary);
 }
+.hero_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  position: relative; /* To ensure text stays within this section */
+}
+
+.hero_img {
+  grid-column: 1 / span 4; /* Image spans all columns */
+  grid-row: 1 / span 4; /* Image spans all rows */
+  position: relative; /* Needed for text overlay */
+}
+
+.hero_img img {
+  width: 100%; /* Make the image responsive */
+  height: auto;
+}
+
+.hero_text {
+  grid-column: 1 / span 2; /* Position text in the bottom-left corner */
+  grid-row: 3 / 5;
+  align-self: end; /* Align text to the bottom of its grid area */
+  justify-self: start; /* Align text to the left of its grid area */
+  position: absolute; /* Position on top of the image */
+  bottom: 20px; /* Adjust as needed */
+  left: 20px; /* Adjust as needed */
+  color: white;
+  margin-left: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.hero_text .button:hover {
+  background: #ffffff;
+}
+
 .grid_2-1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -213,25 +271,11 @@ body {
 
 .footer_flex {
   display: flex;
-  width: ;
+  width: 30%;
   justify-content: space-between;
   img {
     width: 30%;
     gap: ;
     background-color: var(--primary);
   }
-}
-.button {
-  font-family: "inria sans", sans;
-  color: var(--quarternary);
-  padding: var(var(--space-md));
-  background-color: ;
-  border-color: ;
-  border-radius: ;
-  border-radius: 73px;
-  border: 4px solid #fff;
-  background: #a64e5e;
-  width: 230px;
-  height: 58px;
-  flex-shrink: 0;
 }
