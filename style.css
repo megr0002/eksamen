@@ -313,10 +313,6 @@ body {
     gap: var(--space-md);
     padding: var(--space-md);
   }
-  .intro_text {
-    text-align: center;
-    align-content: center;
-  }
 
   .grid_1-1 {
     display: flex;
