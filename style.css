@@ -66,11 +66,11 @@ a {
 .button {
   font-family: "inria sans", sans;
   color: var(--quarternary);
-  padding: 4%;
+  padding: 0.8rem;
   text-decoration: none;
   border-radius: 73px;
   border: 4px solid #fff;
-  background: #a64e5e;
+  background-color: #a64e5e;
   width: 230px;
   height: 58px;
 }
@@ -188,6 +188,8 @@ body {
   background-color: var(--secondary);
 }
 .first_semester {
+  display: grid;
+  align-content: center;
   color: var(--quarternary);
   padding: var(--space-md);
   text-align: center;
@@ -223,8 +225,35 @@ body {
   margin-bottom: var(--space-xl);
 }
 
-.hero_text .button:hover {
-  background: #ffffff;
+.button:hover {
+  background-color: #ffffff;
+  color: var(--tertiary);
+}
+.grid_4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: var(--space-xs);
+  padding: var(--space-xxl);
+  color: var(--quarternary);
+  text-align: center;
+}
+.skills img {
+  width: 50%;
+}
+.zoom:hover {
+  animation-name: zoom;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; /*makes it keep the shape after the animation*/
+}
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }
 
 .project {
@@ -239,6 +268,7 @@ body {
 .grid_1-1 {
   gap: 5%;
 }
+
 @media (max-width: 800px) {
   p {
     max-width: 42ch; /* Begrænser bredden til max 42 tegn på hver linje */
@@ -259,17 +289,32 @@ body {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     gap: var(--space-md);
+    padding: var(--space-md);
   }
+  .intro_text {
+    text-align: center;
+    align-content: center;
+  }
+
   .grid_1-1 {
     display: flex;
     gap: 5%;
   }
+  .first_semester {
+    display: grid;
+    align-content: center;
+    color: var(--quarternary);
+    padding: var(--space-md);
+    text-align: center;
+  }
+  .grid_4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 4%;
+    padding: var(--space-sm);
+  }
 }
-.grid_4 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: var(--space-sm);
-}
+
 .order {
   order: -1;
 }
@@ -303,4 +348,9 @@ footer {
 
 .footer_flex a img {
   width: 60%; /* Ensures images are properly sized */
+}
+.icon a:hover {
+  /* transition: transform(0.5s) ease;
+  filter: opacity(2); */
+  transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out;
 }
