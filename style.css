@@ -303,8 +303,6 @@ body {
   .grid_3 {
     padding: var(--space-md);
   }
-  .hero_text {
-  }
 }
 
 @media (min-width: 800px) {
