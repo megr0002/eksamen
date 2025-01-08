@@ -20,8 +20,6 @@ html {
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 main {
@@ -43,12 +41,10 @@ h1 {
 }
 h2 {
   font-family: "libre baskerville", serif;
-  color: var(--secondary);
 }
 h3 {
   font-family: "inria sans", sans;
   font-weight: normal;
-  color: #000000;
   /* padding-bottom: var(--space-sm); */
 }
 
@@ -57,7 +53,6 @@ p {
   font-weight: normal;
   line-height: 1.6;
   padding-bottom: var(--space-sm);
-  max-width: 42ch; /* Begrænser bredden til max 42 tegn på hver linje */
 }
 a {
   color: #fff;
@@ -72,7 +67,7 @@ a {
   font-family: "inria sans", sans;
   color: var(--quarternary);
   padding: 4%;
-
+  text-decoration: none;
   border-radius: 73px;
   border: 4px solid #fff;
   background: #a64e5e;
@@ -119,6 +114,7 @@ body {
 .menu ul li {
   flex: 1;
   text-align: center;
+  padding: 0 30px;
 }
 
 .menu ul li a {
@@ -226,18 +222,22 @@ body {
   background: #ffffff;
 }
 
-.grid_2-1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5%;
-  padding: var(--space-md);
-}
 .project {
   padding: var(--space-md);
   text-align: left;
+  color: var(--quarternary);
+}
+.project:last-child {
+  order: 1;
 }
 
+.grid_1-1 {
+  gap: 5%;
+}
 @media (max-width: 800px) {
+  p {
+    max-width: 42ch; /* Begrænser bredden til max 42 tegn på hver linje */
+  }
   /* -----------Front page mobile------------ */
   .grid_4 {
     display: grid;
@@ -246,11 +246,18 @@ body {
 }
 
 @media (min-width: 800px) {
+  p {
+    max-width: 63ch; /* Begrænser bredden til max 63 tegn på hver linje */
+  }
   /* -----------Front page desktop------------ */
   .grid_3 {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     gap: var(--space-md);
+  }
+  .grid_1-1 {
+    display: flex;
+    gap: 5%;
   }
 }
 .grid_4 {
@@ -262,20 +269,33 @@ body {
   order: -1;
 }
 
-/* -----------Web desktop------------ */
-.grid_1-1 {
+/* -----------Web------------ */
+
+.course_text {
+  margin-top: 14%;
+  padding: var(--space-md);
+}
+.grid_2-1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5%;
+  padding: var(--space-md);
 }
-
 .footer_flex {
   display: flex;
-  width: 30%;
-  justify-content: space-between;
-  img {
-    width: 30%;
-    gap: ;
-    background-color: var(--primary);
-  }
+  justify-content: center; /* Centers items horizontally */
+  align-items: center; /* Centers items vertically */
+  gap: var(--space-md); /* Adds spacing between items */
+}
+
+footer {
+  display: flex; /* Ensures content inside the footer is flexed */
+  justify-content: center; /* Centers the footer content horizontally */
+  align-items: center; /* Centers the footer content vertically */
+  padding: var(--space-sm);
+  background-color: var(--primary);
+}
+
+.footer_flex a img {
+  width: 60%; /* Ensures images are properly sized */
 }
