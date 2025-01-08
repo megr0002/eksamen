@@ -224,7 +224,14 @@ body {
   margin-left: var(--space-md);
   margin-bottom: var(--space-xl);
 }
-
+.intro_text {
+  color: var(--quarternary);
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+.about_text {
+  color: var(--quarternary);
+}
 .button:hover {
   background-color: #ffffff;
   color: var(--tertiary);
@@ -233,7 +240,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: var(--space-xs);
-  padding: var(--space-xxl);
+  padding: var(--space-md);
   color: var(--quarternary);
   text-align: center;
 }
@@ -268,6 +275,14 @@ body {
 .grid_1-1 {
   gap: 5%;
 }
+.grid_1_1 {
+  padding: var(--space-md);
+  margin-top: 14%;
+}
+.about_text {
+  padding: var(--space-md);
+  text-align: center;
+}
 
 @media (max-width: 800px) {
   p {
@@ -277,6 +292,13 @@ body {
   .grid_4 {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    text-wrap: pretty;
+  }
+
+  .grid_3 {
+    padding: var(--space-md);
+  }
+  .hero_text {
   }
 }
 
@@ -312,6 +334,19 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 4%;
     padding: var(--space-sm);
+  }
+  .grid_1_1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: var(--space-md);
+    margin-top: 10%;
+  }
+  .grid_1_1 img {
+    width: 85%;
+    margin-top: 5rem;
+  }
+  .about {
+    grid-row: span 2;
   }
 }
 
