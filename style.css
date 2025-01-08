@@ -41,6 +41,8 @@ h1 {
 }
 h2 {
   font-family: "libre baskerville", serif;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 h3 {
   font-family: "inria sans", sans;
@@ -66,7 +68,8 @@ a {
 .button {
   font-family: "inria sans", sans;
   color: var(--quarternary);
-  padding: 0.8rem;
+  padding: 0.4rem;
+  font-size: 1rem;
   text-decoration: none;
   border-radius: 73px;
   border: 4px solid #fff;
@@ -123,6 +126,7 @@ body {
   font-size: 16px;
   padding: 5px 10px;
   transition: color 0.3s;
+  text-wrap: nowrap;
 }
 
 .menu ul li a:hover {
@@ -192,7 +196,6 @@ body {
   align-content: center;
   color: var(--quarternary);
   padding: var(--space-md);
-  text-align: center;
 }
 .hero_section {
   display: grid;
@@ -211,7 +214,10 @@ body {
   width: 100%; /* Make the image responsive */
   height: auto;
 }
-
+.hero_text h1 {
+  font-size: 2rem;
+  text-wrap: nowrap;
+}
 .hero_text {
   grid-column: 1 / span 2; /* Position text in the bottom-left corner */
   grid-row: 3 / 5;
@@ -226,8 +232,8 @@ body {
 }
 .intro_text {
   color: var(--quarternary);
-  text-align: center;
   margin-bottom: var(--space-xl);
+  margin-inline: auto;
 }
 .about_text {
   color: var(--quarternary);
@@ -242,7 +248,6 @@ body {
   gap: var(--space-xs);
   padding: var(--space-md);
   color: var(--quarternary);
-  text-align: center;
 }
 .skills img {
   width: 50%;
@@ -281,7 +286,7 @@ body {
 }
 .about_text {
   padding: var(--space-md);
-  text-align: center;
+  margin-inline: auto;
 }
 
 @media (max-width: 800px) {
@@ -306,6 +311,10 @@ body {
   p {
     max-width: 63ch; /* Begrænser bredden til max 63 tegn på hver linje */
   }
+  .button {
+    padding: 0.8rem;
+    font-size: 1.5rem;
+  }
   /* -----------Front page desktop------------ */
   .grid_3 {
     display: grid;
@@ -313,7 +322,9 @@ body {
     gap: var(--space-md);
     padding: var(--space-md);
   }
-
+  .hero_text h1 {
+    font-size: 3rem;
+  }
   .grid_1-1 {
     display: flex;
     gap: 5%;
@@ -323,7 +334,6 @@ body {
     align-content: center;
     color: var(--quarternary);
     padding: var(--space-md);
-    text-align: center;
   }
   .grid_4 {
     display: grid;
@@ -343,6 +353,10 @@ body {
   }
   .about {
     grid-row: span 2;
+  }
+  .about_text,
+  .intro_text {
+    width: 50%;
   }
 }
 
