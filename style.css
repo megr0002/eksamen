@@ -187,6 +187,11 @@ body {
 .pink_background {
   background-color: var(--secondary);
 }
+.first_semester {
+  color: var(--quarternary);
+  padding: var(--space-md);
+  text-align: center;
+}
 .hero_section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
